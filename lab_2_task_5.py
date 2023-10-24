@@ -1,8 +1,12 @@
-first = int(input('Первое число: '))
-second = int(input('Второе число:'))
-if second == 0:
+a = int(input('Число один: '))
+b = int(input('Число два:'))
+if b == 0:
     print('Нет решений')
-elif first / second:
-    a = first % second
-    b = first / second
-    print('Первое число делится на второе! Остаток от деления - ', a, '! Частное чисел - ', b)
+elif a > b:
+    first = a % b
+    second = a / b
+    print('Первое число делится на второе! Остаток от деления - ', first, '! Частное чисел - ', second)
+elif a < b:
+    c = a / b
+    d = 0
+    print('Первое число делится на второе! Остаток от деления - ', c, '! Частное чисел - ', d)
