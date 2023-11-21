@@ -9,3 +9,13 @@ t = np.arange(0, 5, 0.01)
 
 x = x0 + v0x * t
 y = y0 + v0x * t - (g * t**2 / 2)
+
+a = np.zeros((len(t), 3))
+
+for i in range(0, len(t)):
+    a[i, 0] = t[i]
+    print(a)
+
+for i in range(0, len(t)):
+    a[i, 1] = t[i]
+    a[i, 1] = x[i]
