@@ -1,8 +1,13 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
+def giperbola(k):
+    
+    x = np.arange(.01, 10, 0.01)
+    y = k/x
 
-k = int(input('предел изменения переменной x:'))
-n = int(input('количество точек N, на которое разбиваются соответствующие пределы:'))
+    plt.plot(x, y, label='my giperbola')
+    plt.savefig('fig_6.png')
 
-y = k/x
-def x 
+if __name__ == '__main__':
+    giperbola(.2)
