@@ -2,7 +2,7 @@ from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
 import numpy as np 
 
-star_names = ['Aliot', 'Dubhe', 'Benetnash',  'Mizar', 'Merak', 'Phekda']
+star_names = ['Benetnash','Mizar', 'Aliot', 'Megrez', 'Phekda','Merak','Dubhe']
 
 #прямое восхождение и склонение:
 #star_coords = {
@@ -14,15 +14,22 @@ star_names = ['Aliot', 'Dubhe', 'Benetnash',  'Mizar', 'Merak', 'Phekda']
 #    'Phekda':(178, 53)
 #}
 
-def animate(i):
-    alpha = [193, 165, 206, 200, 165, 178]
-    betta = [55, 61, 49, 54, 56, 53]
-    for angle1 in alpha:
-        x = np.cos(betta) * np.cos(alpha)
-    for angle2 in betta:
-        y = np.cos(betta) * np.sin(alpha)
+def animate(time):
+    alpha = np.array([206+(-121)*10**(-3)*time,
+                      200+121*10**(-3)*time,
+                      193+97*10**(-3)*time,
+                      183+102*10**(-3)*time,
+                      178+107*10**(-3)*time,
+                      165+79*10**(-3)*time,
+                      165+(-134)*10**(-3)*time,
+                      183+102*10**(-3)*time,])/180*np.pi
+    delta = np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
+    x = np.cos(delta) * np.cos(alpha)
+    y = np.cos(delta) * np.sin(alpha)
     anim_object.set(x, y)
+    plt.set_title(f'{time}')
     return anim_object,
+
 
 if __name__ == "__main__":
     fig, ax = plt.subplots()
@@ -36,3 +43,13 @@ if __name__ == "__main__":
     ani = FuncAnimation(fig, animate, frames=100, interval=20)
 
     ani.save('star_name.gif')
+
+alpha = np.array([206 ,200, 193, 183, 178, 165, 165, 183])/180*np.pi
+delta =  np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
+x = np.cos(delta) * np.cos(alpha)
+y = np.cos(delta) * np.sin(alpha)
+plt.axis('equal')
+plt.plot(x, y, 'o', color = 'b', label = 'star_name')
+plt.plot(x, y, color='b', label='constellation', ms=1)
+
+plt.savefig('star_name.png')
