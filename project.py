@@ -15,14 +15,7 @@ star_names = ['Benetnash','Mizar', 'Aliot', 'Megrez', 'Phekda','Merak','Dubhe']
 #}
 
 def animate(time):
-    alpha = np.array([206+(-121)*10**(-3)*time,
-                      200+121*10**(-3)*time,
-                      193+97*10**(-3)*time,
-                      183+102*10**(-3)*time,
-                      178+107*10**(-3)*time,
-                      165+79*10**(-3)*time,
-                      165+(-134)*10**(-3)*time,
-                      183+102*10**(-3)*time,])/180*np.pi
+    alpha = np.array([206+(-121)*10**(-3)*time, 200+121*10**(-3)*time, 193+97*10**(-3)*time, 183+102*10**(-3)*time, 178+107*10**(-3)*time, 165+79*10**(-3)*time, 165+(-134)*10**(-3)*time, 183+102*10**(-3)*time,])/180*np.pi
     delta = np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
     x = np.cos(delta) * np.cos(alpha)
     y = np.cos(delta) * np.sin(alpha)
