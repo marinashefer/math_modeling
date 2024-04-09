@@ -37,12 +37,12 @@ if __name__ == "__main__":
 
     ani.save('star_name.gif')
 
-alpha = np.array([206 ,200, 193, 183, 178, 165, 165, 183])/180*np.pi
-delta =  np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
-x = np.cos(delta) * np.cos(alpha)
-y = np.cos(delta) * np.sin(alpha)
-plt.axis('equal')
-plt.plot(x, y, 'o', color = 'b', label = 'star_name')
-plt.plot(x, y, color='b', label='constellation', ms=1)
+#alpha = np.array([206 ,200, 193, 183, 178, 165, 165, 183])/180*np.pi
+# delta =  np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
+# x = np.cos(delta) * np.cos(alpha)
+# y = np.cos(delta) * np.sin(alpha)
+# plt.axis('equal')
+# plt.plot(x, y, 'o', color = 'b', label = 'star_name')
+# plt.plot(x, y, color='b', label='constellation', ms=1)
 
-plt.savefig('star_name.png')
+# plt.savefig('star_name.png')
