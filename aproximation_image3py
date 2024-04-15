@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+img = plt.imread('horsehead.jfif')
+fig, ax = plt.subplots()
+ax.imshow(img)
+x = [250, 340, 350, 150, 80, 60, 100, 180, 250, 300, 450, 500, 550, 630, 682, 692, 660]
+y = [800, 620, 400, 500, 480, 400, 300, 260, 100, 110, 130, 126, 124, 200, 300, 600, 800]
+plt.plot(x,y,lw = 2, color = 'w')
+plt.ylim()
+plt.savefig('KILL3.png')
