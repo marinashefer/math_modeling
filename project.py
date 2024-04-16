@@ -19,9 +19,9 @@ def animate(time):
     delta = np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
     x = np.cos(delta) * np.cos(alpha)
     y = np.cos(delta) * np.sin(alpha)
-    anim_object.set(x, y)
+    anim_object.set_data(x, y)
     plt.set_title(f'{time}')
-    return anim_object,
+    # return anim_object,
 
 
 if __name__ == "__main__":
