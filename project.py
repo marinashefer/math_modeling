@@ -14,30 +14,7 @@ star_names = ['Benetnash','Mizar', 'Aliot', 'Megrez', 'Phekda','Merak','Dubhe']
 #    'Phekda':(178, 53)
 #}
 
-def animate(time):
-    alpha = np.array([206+(-121)*10**(-3)*time, 200+121*10**(-3)*time, 193+97*10**(-3)*time, 183+102*10**(-3)*time, 178+107*10**(-3)*time, 165+79*10**(-3)*time, 165+(-134)*10**(-3)*time, 183+102*10**(-3)*time,])/180*np.pi
-    delta = np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
-    x = np.cos(delta) * np.cos(alpha)
-    y = np.cos(delta) * np.sin(alpha)
-    anim_object.set_data(x, y)
-    plt.set_title(f'{time}')
-    # return anim_object,
-
-
-if __name__ == "__main__":
-    fig, ax = plt.subplots()
-    anim_object, = plt.plot([], [], 'o', color = 'b', label = 'star_name')
-
-    edge = 1
-    plt.axis('equal')
-    ax.set_xlim(-edge, edge)
-    ax.set_ylim(-edge, edge)
-
-    ani = FuncAnimation(fig, animate, frames=100, interval=20)
-
-    ani.save('star_name.gif')
-
-#alpha = np.array([206 ,200, 193, 183, 178, 165, 165, 183])/180*np.pi
+# alpha = np.array([206 ,200, 193, 183, 178, 165, 165, 183])/180*np.pi
 # delta =  np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
 # x = np.cos(delta) * np.cos(alpha)
 # y = np.cos(delta) * np.sin(alpha)
@@ -46,3 +23,34 @@ if __name__ == "__main__":
 # plt.plot(x, y, color='b', label='constellation', ms=1)
 
 # plt.savefig('star_name.png')
+
+
+def animate(time):
+    alpha = np.array([206+(-121)*10**(-3)*time, 
+                      200+121*10**(-3)*time, 
+                      193+97*10**(-3)*time, 
+                      183+102*10**(-3)*time, 
+                      178+107*10**(-3)*time, 
+                      165+79*10**(-3)*time, 
+                      165+(-134)*10**(-3)*time, 
+                      183+102*10**(-3)*time,])/180*np.pi
+    delta = np.array([49, 54, 55, 57, 53,56, 61, 57])/180*np.pi
+    x = np.cos(delta) * np.cos(alpha)
+    y = np.cos(delta) * np.sin(alpha)
+    anim_object.set_data(x, y)
+    #plt.set_title(f'{time}')
+    #return anim_object,
+
+
+if __name__ == "__main__":
+    fig, ax = plt.subplots()
+    anim_object, = plt.plot([], [], 'o', color = 'k', label = 'star_name')
+
+    edge = 1
+    plt.axis('equal')
+    ax.set_xlim(-edge, edge)
+    ax.set_ylim(-edge, edge)
+
+    ani = FuncAnimation(fig, animate, frames=5000, interval=20)
+
+    ani.save('star_nameeee.gif')

@@ -5,7 +5,12 @@ import numpy as np
 star_names = ['Benetnash','Mizar', 'Aliot', 'Megrez', 'Phekda','Merak','Dubhe']
 
 def animate(time):
-    alpha = np.array([206+(-121)*10**(-3)*time, 200+121*10**(-3)*time])/180*np.pi
+    alpha = np.array([206+(-121)*10**(-3)*time, 200+121*10**(-3)*time,  193+97*10**(-3)*time, 
+                      183+102*10**(-3)*time, 
+                      178+107*10**(-3)*time, 
+                      165+79*10**(-3)*time, 
+                      165+(-134)*10**(-3)*time, 
+                      183+102*10**(-3)*time])/180*np.pi
     delta = np.array([49, 54])/180*np.pi
     print(alpha)
     print(delta)
@@ -14,8 +19,8 @@ def animate(time):
     print(x)
     print(y)
     anim_object.set_data(x, y)
-    # plt.set_title(f'{time}')
-
+    plt.set_title(f'{time}')
+    # return anim_object,
 
 if __name__ == "__main__":
     fig, ax = plt.subplots()
@@ -26,7 +31,7 @@ if __name__ == "__main__":
     ax.set_xlim(-edge, edge)
     ax.set_ylim(-edge, edge)
 
-    ani = FuncAnimation(fig, animate, frames=10, interval=20)
+    ani = FuncAnimation(fig, animate, frames=100, interval=20)
 
     ani.save('star_name.gif')
 
